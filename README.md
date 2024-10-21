@@ -1,1 +1,3 @@
-# Chat_with_multiple_pdfs
+# Chat with Multiple PDFs
+
+![LangChain PDF Processing Architecture](docs/app_architecture.png)
