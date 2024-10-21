@@ -23,9 +23,9 @@ To install the MultiPDF Chat App, please follow these steps:
 
 1. **Clone the repository** to your local machine:
    ```bash
-   git clone https://github.com/your-username/chat-with-multiple-pdfs.git
+   https://github.com/elmontaser1998/Chat_with_multiple_pdfs.git
    cd chat-with-multiple-pdfs
    
 2. Install the required dependencies by running the following command:
-  ```bash
-  pip install -r requirements.txt
+     ```bash
+     pip install -r requirements.txt
