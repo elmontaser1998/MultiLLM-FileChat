@@ -17,3 +17,15 @@ The architecture of the MultiPDF Chat App consists of several stages:
 6. **Semantic Search**: The app searches the vector store to find the most relevant chunks of text.
 7. **Answer Generation**: The app sends the most relevant chunks to a **language model** to generate a response.
 
+## Dependencies and Installation
+
+To install the MultiPDF Chat App, please follow these steps:
+
+1. **Clone the repository** to your local machine:
+   ```bash
+   git clone https://github.com/your-username/chat-with-multiple-pdfs.git
+   cd chat-with-multiple-pdfs
+   
+2. Install the required dependencies by running the following command:
+  ```bash
+  pip install -r requirements.txt
