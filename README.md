@@ -14,7 +14,7 @@ The MultiPDF Chat App was built using the following technologies:
 - **Pinecone**: Vector database used to store embeddings and perform efficient semantic search.
 - **LangServe**: For serving and deploying LangChain applications.
 - **LangSmith**: For debugging and evaluating LangChain chains and agents.
-- 
+  
 Other dependencies are listed in `requirements.txt`.
 
 ## Architecture
