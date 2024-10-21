@@ -4,6 +4,19 @@
 
 The **MultiPDF Chat App** allows users to interact with multiple PDF documents through a chatbot interface. By leveraging **LangChain** and **OpenAI**, the app extracts content from the PDFs, converts it into semantic embeddings, and allows users to ask questions in natural language. The app retrieves the most relevant information from the PDFs and generates responses based on the user's queries.
 
+## Technologies Used
+
+The MultiPDF Chat App was built using the following technologies:
+
+- **LangChain**: Framework for managing the processing pipeline and interaction with PDFs.
+- **OpenAI API**: For generating embeddings and answering user questions in natural language.
+- **Streamlit**: For building the user interface and interactive elements.
+- **Pinecone**: Vector database used to store embeddings and perform efficient semantic search.
+- **LangServe**: For serving and deploying LangChain applications.
+- **LangSmith**: For debugging and evaluating LangChain chains and agents.
+- 
+Other dependencies are listed in `requirements.txt`.
+
 ## Architecture
 ![LangChain PDF Processing Architecture](docs/app_architecture.png)
 
