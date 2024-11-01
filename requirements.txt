@@ -1,0 +1,14 @@
+streamlit
+psutil
+PyPDF2
+langchain
+langchain-experimental
+langchain-community
+ragas
+datasets
+python-docx
+faiss-cpu
+python-dotenv
+nltk
+langchain_google_genai
+tabulate
