@@ -18,7 +18,7 @@ The MultiPDF Chat App was built using the following technologies:
 Other dependencies are listed in `requirements.txt`.
 
 ## Architecture
-![LangChain PDF Processing Architecture](docs/app_architecture.png)
+![LangChain PDF Processing Architecture](docs/architecture.png)
 
 The architecture of the MultiPDF Chat App consists of several stages:
 
