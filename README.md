@@ -1,8 +1,8 @@
-# Chat with Multiple PDFs
+# MultiLLM-FileChat
 
 ## Introduction
 
-The **MultiPDF Chat App** allows users to interact with multiple PDF documents through a chatbot interface. By leveraging **LangChain** and **OpenAI**, the app extracts content from the PDFs, converts it into semantic embeddings, and allows users to ask questions in natural language. The app retrieves the most relevant information from the PDFs and generates responses based on the user's queries.
+The **MultiLLM-FileChat App** allows users to interact with multiple PDF documents through a chatbot interface. By leveraging **LangChain** and **OpenAI**, the app extracts content from the PDFs, converts it into semantic embeddings, and allows users to ask questions in natural language. The app retrieves the most relevant information from the PDFs and generates responses based on the user's queries.
 
 ## Technologies Used
 
