@@ -1,34 +1,66 @@
-# MultiLLM-FileChat
+# MultiLLM FileChat
 
 ## Introduction
 
-The **MultiLLM-FileChat App** allows users to interact with multiple PDF documents through a chatbot interface. By leveraging **LangChain** and **OpenAI**, the app extracts content from the PDFs, converts it into semantic embeddings, and allows users to ask questions in natural language. The app retrieves the most relevant information from the PDFs and generates responses based on the user's queries.
+The **MultiLLM-FileChat App** is a powerful tool designed to interactively analyze and retrieve information from various document types (PDF, Word, and CSV) using multiple Large Language Models (LLMs). Built on top of **LangChain** and advanced **embedding techniques**, this app allows users to perform detailed document analysis, question-answering, and content summarization in a user-friendly, chat-like interface.
+
+This app processes and embeds document content, enabling **semantic search** and **conversational AI** to deliver relevant, context-aware responses based on uploaded files. Whether you’re seeking specific details from large PDFs, exploring content in Word documents, or querying structured data in CSV files, the MultiLLM-FileChat App provides a seamless and efficient solution.
+
+## Key Features
+
+- **Document Upload and Processing**: Supports PDF, Word, and CSV file formats, extracting text and data for further analysis.
+- **Semantic Search and Embeddings**: Converts document text into embeddings, allowing for efficient similarity searches to locate relevant information quickly.
+- **Multi-LLM Compatibility**: Choose from multiple LLMs (e.g., Google Gemini, Llama 3.2) based on your needs for response style and accuracy.
+- **CSV Query Agent**: The app includes an intelligent agent specifically designed for interacting with CSV files. 
+- **Real-Time Question Answering**: Users can ask questions about the document content, and the app retrieves and generates contextually accurate responses.
+- **Evaluation Metrics**: Uses RAGAS evaluation metrics (faithfulness, answer relevancy) to assess the accuracy and relevance of responses.
 
 ## Technologies Used
 
-The MultiPDF Chat App was built using the following technologies:
+The MultiLLM FileChat App was built using the following technologies:
 
-- **LangChain**: Framework for managing the processing pipeline and interaction with PDFs.
-- **OpenAI API**: For generating embeddings and answering user questions in natural language.
+- **LangChain**: Framework for building applications that integrate with LLMs.
 - **Streamlit**: For building the user interface and interactive elements.
-- **Pinecone**: Vector database used to store embeddings and perform efficient semantic search.
-- **LangServe**: For serving and deploying LangChain applications.
-- **LangSmith**: For debugging and evaluating LangChain chains and agents.
+- **FAISS**: Vector database used to store embeddings and perform efficient semantic search.
+- **Google Generative AI**: Supplies embeddings and LLM models (e.g., Google Gemini) for response generation and query processing.
+- **Ollama**: An open-source tool that enables users to run large language models (LLMs) locally on their machines(e.g., Llama 3.2). 
+- **RAGAS**:  A library that provides tools to supercharge the evaluation of Large Language Model (LLM) applications by measuring metrics like answer relevancy and faithfulness.
   
 Other dependencies are listed in `requirements.txt`.
 
 ## Architecture
 ![LangChain PDF Processing Architecture](docs/architecture.png)
+The **MultiLLM-FileChat App** consists of two distinct processes to handle different file types: one process for unstructured text files (PDF and Word) and another for structured data files (CSV).
 
-The architecture of the MultiPDF Chat App consists of several stages:
+### Process for PDF and Word Files
 
-1. **PDF Input**: Users can upload multiple PDF files to the application.
-2. **Text Chunking**: The PDFs are processed and broken down into smaller chunks of text for efficient embedding generation.
-3. **Embedding Creation**: The app uses **OpenAI** to generate semantic embeddings for each chunk of text.
-4. **Vector Store**: Embeddings are stored in a vector database for easy retrieval.
-5. **Question Processing**: When the user submits a question, it is transformed into a semantic embedding.
-6. **Semantic Search**: The app searches the vector store to find the most relevant chunks of text.
-7. **Answer Generation**: The app sends the most relevant chunks to a **language model** to generate a response.
+1. **Document Input**: Users can upload multiple PDF or Word files to the application.
+
+2. **Text Chunking**: The PDFs and Word documents are processed, and the extracted text is broken down into smaller chunks for efficient embedding generation.
+
+3. **Embedding Creation**: Each chunk of text is converted into a semantic embedding using an embedding model (e.g., **OpenAI** or **Google Generative AI**). These embeddings capture the semantic meaning of the text, allowing for similarity-based retrieval.
+
+4. **Vector Storage**: The embeddings are stored in a vector database (e.g., **FAISS**), enabling quick retrieval based on semantic similarity when answering user queries.
+
+5. **User Query Processing**: When a user submits a question, the query is also transformed into a semantic embedding. This query embedding will be used to match relevant chunks in the vector store.
+
+6. **Semantic Search**: The app performs a semantic search in the vector store to identify the most relevant text chunks based on the user query.
+
+7. **Answer Generation**: The most relevant chunks are sent to a **language model** (e.g., Google Gemini or Llama 3.2) to generate a response that accurately answers the user’s question based on the document content.
+
+
+---
+
+### Process for CSV Files
+
+1. **CSV Input**: Users can upload a CSV file to the application.
+
+2. **Agent Activation**: Upon detecting a CSV file, the app activates a dedicated **agent** that is specifically designed to handle structured data queries. This agent does not rely on chunking or embeddings, as the data is already organized in tabular format.
+
+3. **User Query Processing**: When a user submits a question related to the CSV data, the agent interprets the query and applies relevant operations, such as data filtering, aggregation, or retrieval based on specific data fields.
+
+4. **Answer Generation**: The agent generates a response by directly querying the CSV data based on the user’s question, using the structured information within the file to provide an accurate and relevant answer.
+
 
 ## Dependencies and Installation
 
@@ -36,8 +68,8 @@ To install the MultiPDF Chat App, please follow these steps:
 
 1. **Clone the repository** to your local machine:
    ```bash
-   https://github.com/elmontaser1998/Chat_with_multiple_pdfs.git
-   cd chat-with-multiple-pdfs
+   git clone https://github.com/yourusername/MultiLLM-FileChat.git
+   cd MultiLLM-FileChat
    
 2. Install the required dependencies by running the following command:
      ```bash
