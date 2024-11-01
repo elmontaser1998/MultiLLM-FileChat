@@ -11,7 +11,7 @@ This app processes and embeds document content, enabling **semantic search** and
 - **Document Upload and Processing**: Supports PDF, Word, and CSV file formats, extracting text and data for further analysis.
 - **Semantic Search and Embeddings**: Converts document text into embeddings, allowing for efficient similarity searches to locate relevant information quickly.
 - **Multi-LLM Compatibility**: Choose from multiple LLMs (e.g., Google Gemini, Llama 3.2) based on your needs for response style and accuracy.
-- **CSV Query Agent**: The app includes an intelligent agent specifically designed for interacting with CSV files. 
+- **CSV Query Agent**: The app includes an intelligent agent specifically designed for interacting with CSV files.
 - **Real-Time Question Answering**: Users can ask questions about the document content, and the app retrieves and generates contextually accurate responses.
 - **Evaluation Metrics**: Uses RAGAS evaluation metrics (faithfulness, answer relevancy) to assess the accuracy and relevance of responses.
 
@@ -23,13 +23,15 @@ The MultiLLM FileChat App was built using the following technologies:
 - **Streamlit**: For building the user interface and interactive elements.
 - **FAISS**: Vector database used to store embeddings and perform efficient semantic search.
 - **Google Generative AI**: Supplies embeddings and LLM models (e.g., Google Gemini) for response generation and query processing.
-- **Ollama**: An open-source tool that enables users to run large language models (LLMs) locally on their machines(e.g., Llama 3.2). 
-- **RAGAS**:  A library that provides tools to supercharge the evaluation of Large Language Model (LLM) applications by measuring metrics like answer relevancy and faithfulness.
-  
+- **Ollama**: An open-source tool that enables users to run large language models (LLMs) locally on their machines (e.g., Llama 3.2).
+- **RAGAS**: A library that provides tools to supercharge the evaluation of Large Language Model (LLM) applications by measuring metrics like answer relevancy and faithfulness.
+
 Other dependencies are listed in `requirements.txt`.
 
 ## Architecture
+
 ![LangChain PDF Processing Architecture](docs/architecture.png)
+
 The **MultiLLM-FileChat App** consists of two distinct processes to handle different file types: one process for unstructured text files (PDF and Word) and another for structured data files (CSV).
 
 ### Process for PDF and Word Files
@@ -48,7 +50,6 @@ The **MultiLLM-FileChat App** consists of two distinct processes to handle diffe
 
 7. **Answer Generation**: The most relevant chunks are sent to a **language model** (e.g., Google Gemini or Llama 3.2) to generate a response that accurately answers the user’s question based on the document content.
 
-
 ---
 
 ### Process for CSV Files
@@ -61,33 +62,38 @@ The **MultiLLM-FileChat App** consists of two distinct processes to handle diffe
 
 4. **Answer Generation**: The agent generates a response by directly querying the CSV data based on the user’s question, using the structured information within the file to provide an accurate and relevant answer.
 
-
 ## Dependencies and Installation
 
-To install the MultiPDF Chat App, please follow these steps:
+To install the MultiLLM FileChat App, please follow these steps:
 
 1. **Clone the repository** to your local machine:
    ```bash
-   git clone https://github.com/yourusername/MultiLLM-FileChat.git
+   git clone https://github.com/elmontaser1998/MultiLLM-FileChat.git
    cd MultiLLM-FileChat
    
 2. Install the required dependencies by running the following command:
      ```bash
      pip install -r requirements.txt
 
-3. Obtain an API key from OpenAI and add it to a .env file in the project directory:
-     ```bash
-     OPENAI_API_KEY=your_secrit_api_key
+3. Obtain an API key for Google and OpenA and add it to a `.env` file in the project directory:
+    ```
+    GOOGLE_API_KEY=your_google_api_key
+    OPENAI_API_KEY=your_openai_api_key
+    ```
 ## Usage
 
-To use the MultiPDF Chat App, follow these steps:
+To use the MultiLLM FileChat App, follow these steps:
 
 1. Ensure that you have installed the required dependencies and added the OpenAI API key to the `.env` file.
 
-2. **Run the `app.py` file** using the Streamlit CLI. Execute the following command:
+2. Run the `app.py` file using the Streamlit CLI. Execute the following command:
    ```bash
     streamlit run app.py
 3. Launch the application: The application will automatically open in your default web browser, displaying the user interface.
-4. Load multiple PDF documents into the app by following the provided instructions in the UI.
-5. Ask questions in natural language: Use the chat interface to ask questions about the loaded PDFs. The app will process your question and return relevant answers based on the content of the PDFs.
+4. Select the LLM model from the sidebar (e.g., Google Gemini or Llama 3.2).
+5. Upload the document(s) you want to query (PDF, Word, or CSV).
+6. Ask questions in natural language: Use the chat interface to ask questions about the loaded document. The app will process your question and return the response along with evaluation metrics for relevancy and faithfulness.
+
+## Contributing
+If you would like to contribute, please fork the repository and submit a pull request. Issues and feature requests are welcome!
    
